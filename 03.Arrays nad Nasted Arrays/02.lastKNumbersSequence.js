@@ -1,14 +1,7 @@
-function lastKNumbers(num1,num2){
+function lastKNumbers(n,k){
   
-    let arr = [1,1];
-    for(let i = 1; i<= num1; i++){
-     
-    let result = arr.slice(-num2)
-    for (const element of result) {
-        element+=element
-        console.log(result);
-    }
-
+    for(let i = 0; i<=n; i++){
+        console.log(n);
     }
 }
 

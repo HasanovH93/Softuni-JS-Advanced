@@ -9,7 +9,7 @@ function oddNumbers(arr) {
   console.log(newArr.reverse())
 
 //   const solve = arr
-//     .filter((x, i) => i % 2)
+//     .filter((_, i) => i % 2)
 //     .map((x = x * 2))
 //     .reverse()
 //     .join(" ");
