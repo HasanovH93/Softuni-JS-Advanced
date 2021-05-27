@@ -10,6 +10,6 @@ function positiveNegative(arr){
             newArr.unshift(element);
         }
     }
-    console.log(newArr);
+    console.log(newArr.join("\n"));
 }
 positiveNegative([7, -2, 8, 9])
