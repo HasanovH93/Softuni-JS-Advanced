@@ -4,14 +4,13 @@ function lastKNumbers(n, k) {
     let sum = 0;
 
     for (let j = arr.length - 1; j > arr.length - 1 - k; j--) {
-    
       if (arr[j] !== undefined) {
         sum += arr[j];
       }
     }
     arr.push(sum);
   }
-  console.log(arr);
+  return arr;
 }
 
 lastKNumbers(6, 3);
