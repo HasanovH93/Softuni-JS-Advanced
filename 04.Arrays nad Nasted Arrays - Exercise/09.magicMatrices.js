@@ -22,7 +22,7 @@ function magicMatrices(arr) {
   let secondArr = arr[1].reduce((a, b) => a + b);
   let thhirdArr = arr[2].reduce((a, b) => a + b);
 
-  if(firstAr == secondArr && firstAr == thhirdArr && secondArr == thhirdArr){
+  if(firstAr == sum && secondArr == sum && thhirdArr == sum){
       return true;
   }else  {
       return false;
