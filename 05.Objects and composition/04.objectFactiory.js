@@ -11,21 +11,14 @@ function factory(lib, list) {
     }
     const parts = order.parts;
     // - for every element in parts
-    for(let part of parts){
-        object[part] = lib[part]
-        
+    for (let part of parts) {
+      // compose function from library into obj
+      object[part] = lib[part];
     }
-
+    // store object
     result.push(object);
   }
   return result;
-
-  // - for every element in parts
-
-  // compose function from library into obj
-  // store object
-
-  // return result
 }
 
 const library = {
