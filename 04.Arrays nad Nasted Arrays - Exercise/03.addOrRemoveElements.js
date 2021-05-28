@@ -1,13 +1,17 @@
 function addAndRemove(commands) {
-  let newArr = [1];
+  let newArr = [];
 
-  for (const el of newArr) {
-    for (const command of commands) {
-      if (command === "add") {
-        newArr.push(el + 1);
-      }
-    }
+  for (let i = 0; i < commands.length; i++) {
+    if (commands[i] === "add") {
+      newArr.push(i + 1);
+    } else if (commands[i] === "remove") {
+      newArr.pop();
+    } 
   }
-  console.log(newArr);
+  if(newArr.length == 0){
+    console.log("Empty")
+}
+  console.log(newArr.join("\n"));
 }
 addAndRemove(["add", "add", "add", "add"]);
+addAndRemove(["remove", "remove", "remove"]);
