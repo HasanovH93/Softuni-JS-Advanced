@@ -6,12 +6,13 @@ function addAndRemove(commands) {
       newArr.push(i + 1);
     } else if (commands[i] === "remove") {
       newArr.pop();
-    } 
+    }
   }
-  if(newArr.length == 0){
-    console.log("Empty")
-}
-  console.log(newArr.join("\n"));
+  if (newArr.length == 0) {
+    console.log("Empty");
+  } else {
+    console.log(newArr.join("\n"));
+  }
 }
 addAndRemove(["add", "add", "add", "add"]);
 addAndRemove(["remove", "remove", "remove"]);
