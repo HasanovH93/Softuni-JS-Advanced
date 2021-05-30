@@ -1,5 +1,5 @@
 function calorieObj(arr) {
-  let result = {};
+  const result = {};
 
   for (let i = 0; i < arr.length; i += 2) {
     let product = arr[i];
