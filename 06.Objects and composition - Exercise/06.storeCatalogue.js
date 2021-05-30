@@ -1,16 +1,14 @@
 function store(arr) {
-  let filtered = arr.sort((a,b) => a.localeCompare(b));
+  let filtered = arr.sort((a, b) => a.localeCompare(b));
   let current = [];
-  let char = '';
-  for(let i = 0; i< filtered.length; i++){
-      current = filtered[i].split(" : ");
-     if(filtered[i][0] != char){
-         console.log(filtered[i][0])
-         char = filtered[i][0]
-     }
-     console.log(`  ${current[0]}: ${current[1]}`)
-
-
+  let char = "";
+  for (let i = 0; i < filtered.length; i++) {
+    current = filtered[i].split(" : ");
+    if (filtered[i][0] != char) {
+      console.log(filtered[i][0]);
+      char = filtered[i][0];
+    }
+    console.log(`  ${current[0]}: ${current[1]}`);
   }
 }
 store([
