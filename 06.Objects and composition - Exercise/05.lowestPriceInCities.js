@@ -3,22 +3,21 @@ function lowestPrice(arr) {
 
   while (arr.length > 0) {
     let [town, product, price] = arr.shift().split(" | ");
-    price = Number(price)
+    price = Number(price);
 
     if (products.filter((x) => x.product === product).length > 0) {
       let obj = products.find((x) => x.product === product);
-      if(obj.price > price){
-          obj.price = price
-          obj.town = town
+      if (obj.price > price) {
+        obj.price = price;
+        obj.town = town;
       }
     } else {
       let obj = { product, town, price };
-      products.push(obj)
-      
+      products.push(obj);
     }
   }
   for (const product of products) {
-     console.log(`${product.product} -> ${product.price} (${product.town})`)
+    console.log(`${product.product} -> ${product.price} (${product.town})`);
   }
 }
 lowestPrice([
