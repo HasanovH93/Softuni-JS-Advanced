@@ -39,19 +39,19 @@ function solve(arr) {
   for (let i = 0; i < arr.length; i++) {
     let line = arr[i];
     let [town, product, price] = line.split(" | ");
-    price = Number(price)
+    price = Number(price);
 
-    if (!obj.hasOwnProperty(product)) {
+    if (!obj[product]) {
       obj[product] = { town, price };
     } else {
-      if (price <= obj[product].price) {
+      if (price < obj[product].price) {
         obj[product] = { town, price };
       }
     }
   }
   let productNames = Object.keys(obj);
   for (const product of productNames) {
-    console.log(`${product} => ${obj[product].price} (${obj[product].town})`)
+    console.log(`${product} -> ${obj[product].price} (${obj[product].town})`);
   }
 }
 
