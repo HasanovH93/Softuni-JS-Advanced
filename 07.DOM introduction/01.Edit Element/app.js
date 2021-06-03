@@ -4,5 +4,10 @@ function edit(element,match,replacer){
     const result = text.split(match).join(replacer)
     element.textContent = result
 
+ 
    
 }
+
+
+
+
