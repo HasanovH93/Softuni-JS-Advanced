@@ -21,11 +21,14 @@ function townsToJSON(arr) {
     let town = new Town(townName, latitude, longitude);
     result.push(town);
   }
-  return JSON.stringify(result)
+  console.log(result)
+  return JSON.stringify(result);
 }
 
-console.log(townsToJSON([
-  "| Town | Latitude | Longitude |",
-  "| Sofia | 42.696552 | 23.32601 |",
-  "| Beijing | 39.913818 | 116.363625 |",
-]));
+console.log(
+  townsToJSON([
+    "| Town | Latitude | Longitude |",
+    "| Sofia | 42.696552 | 23.32601 |",
+    "| Beijing | 39.913818 | 116.363625 |",
+  ])
+);
