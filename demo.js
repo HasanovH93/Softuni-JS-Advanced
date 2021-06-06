@@ -1,19 +1,24 @@
 function solve(arr) {
+    let isMagical = true;
+    for(let i = 0 ; i < arr.length -1 ; i++){
+        let firstRowSum = arr[i].reduce((a,b)=> a + b, 0 );
+        let secondRowSum = arr[i + 1].reduce((a,b)=> a + b, 0 );
 
-    let newArr = []
-    let sorted = arr.sort((a,b) => a-b)
-    
-    while(sorted.length !== 0){
-        let firstElement = sorted.shift();
-        let lastElement = sorted.pop();
-   
-        newArr.push(firstElement)
-        newArr.push(lastElement)
-      
+        let sumColOne = 0;
+        let sumColTwo = 0;
+
+        for(let j = 0; j < arr.length; j++){
+            sumColOne += arr[i][j];
+            sumColTwo += arr[i+1][j]
+        }
+        if(firstRowSum !== secondRowSum || sumColOne !== sumColTwo){
+            isMagical = false
+        }
     }
-     
-   
-  console.log(arr)
-  console.log(newArr)
+    return isMagical
 }
-solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
+console.log(solve([
+  [4, 5, 6],
+  [6, 5, 4],
+  [5, 5, 5],
+]));
