@@ -6,14 +6,13 @@ function deleteByEmail() {
   let isFound = false;
   for (const row of rows) {
     if (row.children[1].textContent === inputValue) {
-      const parent = row.parentElement;
-      parent.removeChild(row);
+      row.remove();
       isFound = true;
       break;
     }
   }
 
-
-    document.getElementById("result").textContent =  isFound ? "Deleted." : "Not found.";
-  
+  document.getElementById("result").textContent = isFound
+    ? "Deleted."
+    : "Not found.";
 }
