@@ -1,5 +1,4 @@
-function argInfo() {
-  const params = [...arguments];
+function argInfo(...params) {
 
   const types = {};
 
