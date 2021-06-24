@@ -7,7 +7,7 @@ function solve() {
 
   const [_, openSection, progressSection, finishSection] = [
     ...document.querySelectorAll("section"),
-  ];
+  ].map((e) => e.children[1]);
 
   document.getElementById("add").addEventListener("click", addTask);
 
@@ -19,12 +19,16 @@ function solve() {
     const article = document.createElement("article");
     article.appendChild(createElement("h3", input.name.value));
     article.appendChild(
-      createElement("p", `Desciption: ${input.description.value}`)
+      createElement("p", `Description: ${input.description.value}`)
     );
-    article.appendChild(createElement("p", `Due date: ${input.date.value}`));
+    article.appendChild(createElement("p", `Due Date: ${input.date.value}`));
     const div = createElement("div", "", "flex");
-    div.appendChild(createElement("button", "Start", "green"));
-    div.appendChild(createElement("button", "Delete", "red"));
+
+    const startBtn = createElement("button", "Start", "green");
+    const deletenBtn = createElement("button", "Delete", "red");
+    const finishBtn = createElement("button", "Finish", "orange");
+    div.appendChild(startBtn);
+    div.appendChild(deletenBtn);
     article.appendChild(div);
     //append to Open Secion
 
@@ -33,6 +37,21 @@ function solve() {
     Object.values(input).forEach((i) => (i.vaue = ""));
 
     // ** add functionaloty for start , finish ,delete task.
+    startBtn.addEventListener("click", onStart);
+    deletenBtn.addEventListener("click", onDelete);
+    finishBtn.addEventListener("click", onFinish);
+    function onDelete() {
+      article.remove();
+    }
+    function onStart() {
+      startBtn.remove();
+      div.appendChild(finishBtn);
+      progressSection.appendChild(article);
+    }
+    function onFinish() {
+     div.remove()
+      finishSection.appendChild(article);
+    }
   }
 
   function createElement(type, content, className) {
