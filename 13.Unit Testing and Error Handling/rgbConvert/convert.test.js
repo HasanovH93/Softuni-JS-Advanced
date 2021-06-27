@@ -42,4 +42,8 @@ describe("RGBtoHexColor", () => {
     expect(rgbToHexColor(0, '1', 0)).to.be.undefined;
     expect(rgbToHexColor(0, 0, '1')).to.be.undefined;
   });
+
+  it("converts 15 15 15 to #0f0f0f", () => {
+    expect(rgbToHexColor(15, 15, 15)).to.equal("#0f0f0f");
+  });
 });
