@@ -26,4 +26,8 @@ describe("look for a char in string TEST", () => {
   it("return incorrect index under string length", () => {
     assert.equal(lookupChar("string", -1), "Incorrect index");
   });
+
+  it("empty string input", () => {
+    assert.equal(lookupChar("", 0), "Incorrect index");
+  });
 });
