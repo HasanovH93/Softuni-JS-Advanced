@@ -8,7 +8,7 @@ function printEveryN(arr,n) {
    
 
     let newArr = []
-   for(let i = 0; i< arr.length; i++){
+   for(let i = 0; i< arr.length; i++){   // i+=n
        if(i % n == 0){
            newArr.push(arr[i])
        }
