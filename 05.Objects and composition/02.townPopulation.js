@@ -3,13 +3,12 @@ function townPopulation(arr) {
 
   for (const element of arr) {
     const [cityName, populationAsString] = element.split("<->");
-    let population = Number(populationAsString)
-   
+    let population = Number(populationAsString);
+
     if (!result[cityName]) {
       result[cityName] = 0;
-    } 
-      result[cityName] += population;
-   
+    }
+    result[cityName] += population;
   }
   for (let town in result) {
     console.log(`${town}: ${result[town]}`);
