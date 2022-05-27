@@ -2,14 +2,14 @@ function townPopulation(arr) {
   const result = {};
 
   for (const element of arr) {
-    const tokens = element.split("<->");
-    const cityName = tokens[0];
-    let population = Number(tokens[1]);
-    if (result[cityName] == undefined) {
-      result[cityName] = population;
-    } else {
+    const [cityName, populationAsString] = element.split("<->");
+    let population = Number(populationAsString)
+   
+    if (!result[cityName]) {
+      result[cityName] = 0;
+    } 
       result[cityName] += population;
-    }
+   
   }
   for (let town in result) {
     console.log(`${town}: ${result[town]}`);
