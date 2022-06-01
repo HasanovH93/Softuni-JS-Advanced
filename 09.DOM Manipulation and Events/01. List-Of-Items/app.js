@@ -1,3 +1,14 @@
-function addItem() {
-    console.log('TODO:...');
+function addItesm() {
+   const content = document.getElementById('newItemText').value;
+
+   const liElement = document.createElement('li');
+
+   liElement.textContent = content
+   
+   const ulElement  =  document.getElementById('items')
+   ulElement.appendChild(liElement)
+
+   document.getElementById('newItemText').value = ''
+
+    
 }
