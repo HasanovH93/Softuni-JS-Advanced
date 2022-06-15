@@ -4,7 +4,7 @@ function solve() {
   const tbody = document.querySelector("tbody");
 
   generateBtn.addEventListener("click", generate);
-  buyBtn.addEventListener('click', buy)
+  buyBtn.addEventListener("click", buy);
 
   const items = [];
 
@@ -34,35 +34,32 @@ function solve() {
 
       items.push({
         ...item,
-        isChecked
-      })
-      function isChecked(){
-        return checkbox.checked
+        isChecked,
+      });
+      function isChecked() {
+        return checkbox.checked;
       }
     }
   }
-  function buy(){
+  function buy() {
     let list = [];
     let total = 0;
     let decoration = 0;
-    const boughtItems = items
-    .filter(i => i.isChecked());
+    const boughtItems = items.filter((i) => i.isChecked());
 
-    for(let item of boughtItems){
-      list.push(item.name)
-      total+= Number(item.price)
-      decoration += Number(item.decFactor)
+    for (let item of boughtItems) {
+      list.push(item.name);
+      total += Number(item.price);
+      decoration += Number(item.decFactor);
     }
 
-    decoration /= boughtItems.length
+    decoration /= boughtItems.length;
 
     output.value = [
-      `Bought furniture: ${list.join(', ')}`,
+      `Bought furniture: ${list.join(", ")}`,
       `Total price: ${total.toFixed(2)}`,
-      `Average decoration factor: ${decoration}`
-    ].join('\n')
-   
-
+      `Average decoration factor: ${decoration}`,
+    ].join("\n");
   }
 
   function createColumn(type, content) {
