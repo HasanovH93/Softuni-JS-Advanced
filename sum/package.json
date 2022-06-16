@@ -1,0 +1,20 @@
+{
+  "name": "sum-numbers",
+  "version": "1.0.0",
+  "description": "Short demo of Unit testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "testing",
+    "mocha",
+    "chai",
+    "demo"
+  ],
+  "author": "HasanovH",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.6"
+  }
+}
