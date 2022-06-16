@@ -16,6 +16,6 @@ function calculator() {
     result.value = Number(field1.value) + Number(field2.value);
   }
   function subtract() {
-    result.value = Number(field2.value) - Number(field1.value);
+    result.value = Number(field1.value) - Number(field2.value);
   }
 }
